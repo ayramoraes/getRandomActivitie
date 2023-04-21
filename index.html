@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Find Things to Do When You're Bored</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+
+</head>
+
+<body>
+  <main>
+    <div class="button-container">
+      <div id="random-activity">
+        <h1>Let us help you find things to do when you're bored.</h1>
+        <button id="random-activity-btn">Get random suggestion</button>
+        <p id="activity"></p>
+      </div>
+
+      <section><button class="show-modal" data-modal="modal1">Search suggestion</button>
+        <div class="modal hidden" id="modal1">
+          <span class="close-modal">&times;</span>
+          <div id="activity-by-category">
+            <form id="category-form">
+              <label for="category-select">Category:</label>
+              <select id="category-select" name="category"></select>
+              <label for="activity-type-select">Activity type:</label>
+              <select id="activity-type-select" name="activity-type">
+                <option value="">--Select activity type--</option>
+                <option value="1">Individual</option>
+                <option value="2">Collective</option>
+              </select>
+              <button id="category-btn">Search</button>
+            </form>
+            <p id="activity-category"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+    </div>
+    <div class="overlay hidden" id="overlay"></div>
+  </main>
+
+
+
+  <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- <button id="search-activity-btn">Search suggestion</button>
+    <div class="modal hidden" id="activity-by-category">
+      <button class="close-modal">&times;</button>
+      <p id="activity-category"></p>
+    </div> -->

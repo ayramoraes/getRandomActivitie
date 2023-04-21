@@ -1,0 +1,242 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('https://img.freepik.com/free-photo/beautiful-shot-lake-with-surrounded-by-trees-sunset_181624-27501.jpg?w=996&t=st=1681743501~exp=1681744101~hmac=56564ac81df9132e90d1f8274082946c5f5cc49712b310e0bef79a00ecef86ac');
+  background-size: cover;
+  background-position: center;
+  font-weight: 400;
+  height: 100vh;
+  color: #333;
+  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://img.freepik.com/free-photo/beautiful-shot-lake-with-surrounded-by-trees-sunset_181624-27501.jpg?w=996&t=st=1681743501~exp=1681744101~hmac=56564ac81df9132e90d1f8274082946c5f5cc49712b310e0bef79a00ecef86ac');
+  background-size: cover;
+  background-position: center;
+  filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: -1;
+}
+
+main {
+  display: flex;
+  overflow: hidden;
+  background-color: white;
+  max-width: 800px;
+  margin: 150px auto;
+  margin-bottom: 150px;
+  padding: 40px 40px;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  width: 100rem;
+  height: 60rem;
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #333;
+  text-align: center;
+}
+
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+}
+
+button {
+  font-family: 'Raleway', sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #333;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  flex: 50%;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.75s;
+}
+
+button:last-child {
+  margin-right: 0;
+}
+
+button:hover {
+  background-color: #555;
+}
+/* Elements */
+#random-activity-btn {
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.show-modal {
+  width: 65%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background-color: #fff;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  overflow: auto;
+}
+
+/* Hidden by default */
+.hidden {
+  display: none;
+}
+
+/* Close button */
+.close-modal {
+  position: absolute;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  border: none;
+  background: none;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  display: none;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.modal .close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.modal .close-modal:hover {
+  color: #000;
+}
+
+.modal #activity-by-category {
+  margin-top: 20px;
+}
+
+.modal #activity-by-category label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.modal #activity-by-category select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.modal #activity-by-category button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.modal #activity-by-category button:hover {
+  background-color: #3e8e41;
+}
+
+.modal #activity-category {
+  margin-top: 20px;
+  font-size: 18px;
+}
