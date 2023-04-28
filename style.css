@@ -43,7 +43,7 @@ main {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
 }
 
 /* style h1 as title */
@@ -69,18 +69,14 @@ h1 {
   font-size: 36px;
   font-weight: bold;
   color: #333;
-  text-align: center;
 }
 
 /* style random suggestion button */
 
-
-#random-activity-btn {
+button {
   position: absolute;
-  width: 300px;
-  top: 50rem;
-  left: 50%;
   transform: translateX(-50%);
+  left: 50%;
   color: #444;
   background: none;
   border: none;
@@ -98,36 +94,6 @@ h1 {
   padding: 0.7rem 2.5rem;
   border-radius: 50rem;
   box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-}
-button#random-activity-btn:hover {
-  background-color: #555;
-  color: antiquewhite;
-}
-
-.show-modal {
-  position: absolute;
-  width: 300px;
-  top: 55.3rem;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #444;
-  background: none;
-  border: none;
-  font-family: inherit;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  font-weight: 400;
-  transition: all 0.2s;
-
-  background-color: white;
-  background-color: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(10px);
-
-  padding: 0.7rem 2.5rem;
-  border-radius: 50rem;
-  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
-
 }
 
 button:hover {
@@ -136,20 +102,30 @@ button:hover {
 
 }
 
+#random-activity-btn {
+  width: 300px;
+  top: 50rem;
+}
+
+.show-modal {
+  width: 300px;
+  top: 55.3rem;
+}
+
 /* Modal styles */
 .modal {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1000;
+  z-index: 500;
   background-color: #fff;
-  width: 80%;
-  max-width: 800px;
+  width: 40%;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: auto;
+  height: 300px;
 }
 
 /* Hidden by default */
@@ -157,50 +133,23 @@ button:hover {
   display: none;
 }
 
-/* Close button */
-.close-modal {
-  position: absolute;
-  font-weight: bold;
-  color: #333;
-  cursor: pointer;
-  top: 1.2rem;
-  right: 2rem;
-  font-size: 5rem;
-  color: #333;
-  border: none;
-  background: none;
-}
-
 /* Overlay */
 .overlay {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 900;
-  display: none;
-}
-
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  max-width: 600px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
 }
 
 .modal h2 {
   margin-top: 0;
 }
 
-.modal .close-modal {
+.close-modal {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -216,17 +165,21 @@ button:hover {
   color: #000;
 }
 
-.modal #activity-by-category {
+.modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin-top: 20px;
 }
 
-.modal #activity-by-category label {
-  display: block;
+label {
   margin-bottom: 5px;
+  font-size: large;
+  text-align: left; 
 }
 
-.modal #activity-by-category select {
-  display: block;
+.modal form select {
   width: 100%;
   padding: 10px;
   margin-bottom: 10px;
@@ -235,23 +188,26 @@ button:hover {
   font-size: 16px;
 }
 
-.modal #activity-by-category button {
-  display: block;
-  width: 100%;
+.modal form button {
+  width: 30%;
   padding: 10px;
   background-color: #4CAF50;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   font-size: 16px;
   cursor: pointer;
+  margin-top: 55%;
 }
 
-.modal #activity-by-category button:hover {
+.modal form button:hover {
   background-color: #3e8e41;
 }
-
-.modal #activity-category {
-  margin-top: 20px;
-  font-size: 18px;
+#activity-category {
+  margin-bottom: 50px; 
+  margin-top: 30px;
+  text-align: center; 
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
 }
