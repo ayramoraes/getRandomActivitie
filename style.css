@@ -13,15 +13,10 @@ html {
 }
 
 body {
-  margin: 0;
-  padding: 0;
-  background-image: url('https://img.freepik.com/free-photo/beautiful-shot-lake-with-surrounded-by-trees-sunset_181624-27501.jpg?w=996&t=st=1681743501~exp=1681744101~hmac=56564ac81df9132e90d1f8274082946c5f5cc49712b310e0bef79a00ecef86ac');
+  background-image: url('https://img.freepik.com/free-photo/modern-office-desk-composition-with-technological-device_23-2147915902.jpg?w=900&t=st=1682612722~exp=1682613322~hmac=4d9d03bb48a3a861b998406b77f0b9db2339c01f673f0bd96961906f332d99f4');
   background-size: cover;
   background-position: center;
   font-weight: 400;
-  height: 100vh;
-  color: #333;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +29,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://img.freepik.com/free-photo/beautiful-shot-lake-with-surrounded-by-trees-sunset_181624-27501.jpg?w=996&t=st=1681743501~exp=1681744101~hmac=56564ac81df9132e90d1f8274082946c5f5cc49712b310e0bef79a00ecef86ac');
+  background-image: url('https://img.freepik.com/free-photo/modern-office-desk-composition-with-technological-device_23-2147915902.jpg?w=900&t=st=1682612722~exp=1682613322~hmac=4d9d03bb48a3a861b998406b77f0b9db2339c01f673f0bd96961906f332d99f4');
   background-size: cover;
   background-position: center;
   filter: blur(3px);
@@ -42,82 +37,102 @@ body::before {
   z-index: -1;
 }
 
+/* center main content */
 main {
   display: flex;
-  overflow: hidden;
-  background-color: white;
-  max-width: 800px;
-  margin: 150px auto;
-  margin-bottom: 150px;
-  padding: 40px 40px;
-  background-color: #fff;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
-  position: relative;
-  width: 100rem;
-  height: 60rem;
-  backdrop-filter: blur(200px);
-  filter: blur();
-  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-  border-radius: 9px;
-}
-
-h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  color: #333;
-  text-align: center;
-}
-
-
-h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  color: #333;
-  text-align: center;
-}
-
-button {
-  font-family: 'Raleway', sans-serif;
-  display: inline-block;
-  padding: 10px 20px;
-  margin-top: 20px;
-  margin-right: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #333;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-  flex: 50%;
   flex-direction: column;
   align-items: center;
-  transition: all 0.75s;
+  justify-content: center;
+  
 }
 
-button:last-child {
-  margin-right: 0;
+/* style h1 as title */
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  font-weight: bold;
+  margin-top: 200px;
+  margin-bottom: 50px;
+  color: #333;
+  text-align: center;
+  font-weight: bold;
+  display: inline-block;
+  width: 85%;
+  text-align: center;
+}
+
+/* style activity paragraph */
+#activity {
+
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+/* style random suggestion button */
+
+
+#random-activity-btn {
+  position: absolute;
+  width: 300px;
+  top: 50rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+button#random-activity-btn:hover {
+  background-color: #555;
+  color: antiquewhite;
+}
+
+.show-modal {
+  position: absolute;
+  width: 300px;
+  top: 55.3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: 400;
+  transition: all 0.2s;
+
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+
+  padding: 0.7rem 2.5rem;
+  border-radius: 50rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+
 }
 
 button:hover {
   background-color: #555;
-}
-/* Elements */
-#random-activity-btn {
-  width: 65%;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.75s;
-}
-
-.show-modal {
-  width: 65%;
-  padding: 2rem;
-  text-align: center;
-  transition: all 0.75s;
+  color: antiquewhite;
 
 }
 
