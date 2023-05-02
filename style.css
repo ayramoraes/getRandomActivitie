@@ -69,6 +69,9 @@ h1 {
   font-size: 36px;
   font-weight: bold;
   color: #333;
+  border: 2px solid #ccc; /* Add a 2px solid gray border */
+  border-radius: 10px; /* Add 10px rounded corners */
+  padding: 1rem; /* Add 1rem padding to the border */
 }
 
 /* style random suggestion button */
@@ -121,7 +124,7 @@ button:hover {
   z-index: 500;
   background-color: #fff;
   width: 40%;
-  padding: 20px;
+  padding: 15px;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   overflow: auto;
@@ -202,6 +205,11 @@ label {
 
 .modal form button:hover {
   background-color: #3e8e41;
+}
+.modal form button[disabled] {
+  background-color: #cccccc; /* Gray background color */
+  color: #666666; /* Dark gray text color */
+  cursor: not-allowed; /* Change mouse pointer */
 }
 #activity-category {
   margin-bottom: 50px; 

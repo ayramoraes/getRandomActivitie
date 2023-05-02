@@ -1,3 +1,5 @@
+<!-- Modificar modal:
+Desabilitar o botão quando não tiver selecionado -->
 <!DOCTYPE html>
 <html>
 
@@ -12,10 +14,10 @@
 
 <body>
   <main>
-    <h1>Let us help you find things to do when you're bored.</h1>
+    <h1>Find things to do when you're bored</h1>
     <p id="activity"></p>
-    <button id="random-activity-btn">Get random suggestion</button>
-    <button class="show-modal" data-modal="modal1">Search suggestion</button>
+    <button id="random-activity-btn">Surprise me!</button>
+    <button class="show-modal" data-modal="modal1">Scout for inspo</button>
     <div class="modal hidden" id="modal1">
       <span class="close-modal">&times;</span>
       <form id="category-form">
@@ -23,11 +25,11 @@
         <select id="category-select" name="category"></select>
         <label for="activity-type-select">Activity type:</label>
         <select id="activity-type-select" name="activity-type">
-          <option value="">--Select activity type--</option>
+          <option value="">--Any--</option>
           <option value="1">Individual</option>
           <option value="2">Collective</option>
         </select>
-        <button id="category-btn">Search</button>
+        <button id="category-btn" disabled>Scour the options</button>
       </form>
       <p id="activity-category"></p>
     </div>

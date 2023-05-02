@@ -49,6 +49,8 @@ document.addEventListener('keydown', function (e) {
 
 closeModal();
 
+
+
 // Populate the category select element
 const categories = [
   { value: "", label: "--Select a category--" },
@@ -102,6 +104,15 @@ function searchActivityByCategory(event) {
       });
   }
 }
+
+categorySelect.addEventListener('change', () => {
+  if (categorySelect.value !== "") {
+    categoryBtn.disabled = false;
+  } else {
+    categoryBtn.disabled = true;
+  }
+});
+
 
 randomActivityBtn.addEventListener("click", getRandomActivity);
 categoryBtn.addEventListener("click", searchActivityByCategory);
