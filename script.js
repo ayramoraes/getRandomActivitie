@@ -13,6 +13,7 @@ const activityTypeBtn = document.getElementById("activity-type-btn");
 const loader = document.querySelector('#loader');
 
 
+
 function openModal(index) {
   modal[index].classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -79,6 +80,12 @@ function getRandomActivity() {
     .then((response) => response.json())
     .then((data) => {
       activityParagraph.textContent = data.activity;
+
+      if (activityParagraph.textContent !== '') {
+        activityParagraph.style.border = '2px solid #ccc';
+      } else {
+        activityParagraph.style.border = 'none';
+      }
     })
     .catch((error) => {
       console.error(error);
