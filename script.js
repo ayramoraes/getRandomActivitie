@@ -10,6 +10,7 @@ const categoryBtn = document.getElementById("category-btn");
 const activityCategoryParagraph = document.getElementById("activity-category");
 const activityTypeSelect = document.getElementById("activity-type-select");
 const activityTypeBtn = document.getElementById("activity-type-btn");
+const loader = document.querySelector('#loader');
 
 
 function openModal(index) {
