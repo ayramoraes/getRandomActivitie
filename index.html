@@ -15,7 +15,10 @@ Desabilitar o botão quando não tiver selecionado -->
 <body>
   <main>
     <h1>Find things to do when you're bored</h1>
-    <p id="activity"></p>
+    <div id="loader">
+          </div><p id="activity"></p>
+          <p id="loading-message" style="display: none;">Loading...</p>
+    </div>
     <button id="random-activity-btn">Surprise me!</button>
     <button class="show-modal" data-modal="modal1">Let me choose</button>
     <div class="modal hidden" id="modal1">

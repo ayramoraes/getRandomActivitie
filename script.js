@@ -10,8 +10,7 @@ const categoryBtn = document.getElementById("category-btn");
 const activityCategoryParagraph = document.getElementById("activity-category");
 const activityTypeSelect = document.getElementById("activity-type-select");
 const activityTypeBtn = document.getElementById("activity-type-btn");
-const loader = document.querySelector('#loader');
-
+const loadingImage = document.querySelector('#loading');
 
 
 function openModal(index) {
@@ -76,11 +75,11 @@ categories.forEach((category) => {
 
 // Retrieve a random activity
 function getRandomActivity() {
+  activityParagraph.textContent = 'Loading...'; // show loading message
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
       activityParagraph.textContent = data.activity;
-
       if (activityParagraph.textContent !== '') {
         activityParagraph.style.border = '2px solid #ccc';
       } else {
@@ -89,6 +88,7 @@ function getRandomActivity() {
     })
     .catch((error) => {
       console.error(error);
+      activityParagraph.textContent = 'Error fetching activity...'; // show error message
     });
 }
 
@@ -120,6 +120,7 @@ categorySelect.addEventListener('change', () => {
     categoryBtn.disabled = true;
   }
 });
+
 
 
 randomActivityBtn.addEventListener("click", getRandomActivity);
