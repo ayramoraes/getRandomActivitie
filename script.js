@@ -73,14 +73,13 @@ categories.forEach((category) => {
   categorySelect.appendChild(option);
 });
 
-// Retrieve a random activity
 function getRandomActivity() {
   activityParagraph.textContent = 'Loading...'; // show loading message
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
       activityParagraph.textContent = data.activity;
-      if (activityParagraph.textContent !== '') {
+      if (data.activity !== '') { // only show border when activity is not empty
         activityParagraph.style.border = '2px solid #ccc';
       } else {
         activityParagraph.style.border = 'none';
