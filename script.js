@@ -72,18 +72,23 @@ categories.forEach((category) => {
   categorySelect.appendChild(option);
 });
 
-// Retrieve a random activity
 function getRandomActivity() {
+  activityParagraph.textContent = 'Loading...'; // show loading message
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
       activityParagraph.textContent = data.activity;
+      if (activityParagraph.textContent !== '') {
+        activityParagraph.style.border = '2px solid #ccc'; // show border only when text is not empty
+      } else {
+        activityParagraph.style.border = 'none'; // remove border when text is empty
+      }
     })
     .catch((error) => {
       console.error(error);
+      activityParagraph.textContent = 'Error fetching activity...'; // show error message
     });
 }
-
 function searchActivityByCategory(event) {
   event.preventDefault();
   const category = categorySelect.value;
