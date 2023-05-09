@@ -74,7 +74,8 @@ categories.forEach((category) => {
 });
 
 function getRandomActivity() {
-  activityParagraph.textContent = 'Loading...'; // show loading message
+
+  activityParagraph.textContent = 'Loading...'; 
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
@@ -126,6 +127,7 @@ categorySelect.addEventListener('change', () => {
     categoryBtn.disabled = true;
   }
 });
+
 
 
 
