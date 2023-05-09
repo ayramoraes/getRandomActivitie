@@ -13,6 +13,7 @@ const activityTypeBtn = document.getElementById("activity-type-btn");
 const categoryForm = document.querySelector('#category-form');
 
 
+
 function openModal(index) {
   modal[index].classList.remove('hidden');
   overlay.classList.remove('hidden');
@@ -72,19 +73,22 @@ categories.forEach((category) => {
 });
 
 function getRandomActivity() {
+
   activityParagraph.textContent = 'Loading...'; 
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
       activityParagraph.textContent = data.activity;
+    
       if (activityParagraph.textContent !== '') {
         activityParagraph.style.border = '2px solid #ccc'; 
-        
       }
     })
     .catch((error) => {
       console.error(error);
+
       activityParagraph.textContent = 'Error fetching activity...'; 
+
     });
 }
 
@@ -118,6 +122,7 @@ categorySelect.addEventListener('change', () => {
     categoryBtn.disabled = true;
   }
 });
+
 
 
 randomActivityBtn.addEventListener("click", getRandomActivity);
