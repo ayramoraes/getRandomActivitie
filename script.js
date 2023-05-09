@@ -10,7 +10,7 @@ const categoryBtn = document.getElementById("category-btn");
 const activityCategoryParagraph = document.getElementById("activity-category");
 const activityTypeSelect = document.getElementById("activity-type-select");
 const activityTypeBtn = document.getElementById("activity-type-btn");
-const loadingImage = document.querySelector('#loading');
+const searchForm = document.querySelector('#search-form');
 
 
 function openModal(index) {
@@ -74,7 +74,8 @@ categories.forEach((category) => {
 });
 
 function getRandomActivity() {
-  activityParagraph.textContent = 'Loading...'; // show loading message
+
+  activityParagraph.textContent = 'Loading...'; 
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
@@ -93,11 +94,16 @@ function getRandomActivity() {
 
 function searchActivityByCategory(event) {
   event.preventDefault();
-  const category = categorySelect.value;
-  const type = activityTypeSelect.value;
+  // const category = categorySelect.value;
+  // const type = activityTypeSelect.value;
+
+  const formData = new FormData(event.target);
+  const category = formData.get('category');
+  const type = formData.get('type') ?? "";
   
   if (category) {
-    fetch(`${url}activity?type=${category}&participants=${type}`)
+    let requestURL = `${url}activity?type=${category}&participants=${type}`
+    fetch(requestURL)
       .then((response) => response.json())
       .then((data) => {
         if (data.activity) {
@@ -112,6 +118,8 @@ function searchActivityByCategory(event) {
   }
 }
 
+
+
 categorySelect.addEventListener('change', () => {
   if (categorySelect.value !== "") {
     categoryBtn.disabled = false;
@@ -122,5 +130,7 @@ categorySelect.addEventListener('change', () => {
 
 
 
+
 randomActivityBtn.addEventListener("click", getRandomActivity);
-categoryBtn.addEventListener("click", searchActivityByCategory);
+// categoryBtn.addEventListener("click", searchActivityByCategory);
+searchForm.addEventListener('submit', searchActivityByCategory);

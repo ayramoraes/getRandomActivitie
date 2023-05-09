@@ -23,7 +23,7 @@ Desabilitar o botão quando não tiver selecionado -->
     <button class="show-modal" data-modal="modal1">Let me choose</button>
     <div class="modal hidden" id="modal1">
       <span class="close-modal">&times;</span>
-      <form id="category-form">
+      <form id="search-form">
         <label for="category-select">Category:</label>
         <select id="category-select" name="category"></select>
         <label for="activity-type-select">Activity type:</label>
@@ -32,9 +32,9 @@ Desabilitar o botão quando não tiver selecionado -->
           <option value="1">Individual</option>
           <option value="2">Collective</option>
         </select>
-        <button id="category-btn" disabled>Search the options</button>
+        <p id="activity-category"></p>
+        <button type="submit" id="category-btn" disabled>Search the options</button>
       </form>
-      <p id="activity-category"></p>
     </div>
     <div class="overlay hidden" id="overlay"></div>
   </main>
@@ -44,10 +44,7 @@ Desabilitar o botão quando não tiver selecionado -->
   <script src="script.js"></script>
 </body>
 
+
 </html>
 
-<!-- <button id="search-activity-btn">Search suggestion</button>
-    <div class="modal hidden" id="activity-by-category">
-      <button class="close-modal">&times;</button>
-      <p id="activity-category"></p>
-    </div> --> 
+
