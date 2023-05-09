@@ -37,16 +37,13 @@ body::before {
   z-index: -1;
 }
 
-/* center main content */
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
 }
 
-/* style h1 as title */
 h1 {
   font-family: 'Playfair Display', serif;
   font-size: 52px;
@@ -55,25 +52,21 @@ h1 {
   margin-bottom: 50px;
   color: #333;
   text-align: center;
-  font-weight: bold;
   display: inline-block;
   width: 85%;
   text-align: center;
 }
 
-/* style activity paragraph */
 #activity {
-
   margin-bottom: 2rem;
   text-align: center;
   font-size: 36px;
   font-weight: bold;
   color: #333;
-  border-radius: 10px; /* Add 10px rounded corners */
-  padding: 1rem; /* Add 1rem padding to the border */
+  border-radius: 10px; 
+  padding: 1rem; 
+  font-style: italic;
 }
-
-/* style random suggestion button */
 
 button {
   position: absolute;
@@ -101,7 +94,6 @@ button {
 button:hover {
   background-color: #555;
   color: antiquewhite;
-
 }
 
 #random-activity-btn {
@@ -131,12 +123,10 @@ button:hover {
   height: auto; 
 }
 
-/* Hidden by default */
 .hidden {
   display: none;
 }
 
-/* Overlay */
 .overlay {
   position: absolute;
   top: 0;
@@ -209,9 +199,9 @@ label {
   background-color: #3e8e41;
 }
 .modal form button[disabled] {
-  background-color: #cccccc; /* Gray background color */
-  color: #666666; /* Dark gray text color */
-  cursor: not-allowed; /* Change mouse pointer */
+  background-color: #cccccc; 
+  color: #666666; 
+  cursor: not-allowed; 
 }
 
 #activity-category {
@@ -221,4 +211,5 @@ label {
   font-size: 20px;
   font-weight: bold;
   color: #333;
+  font-style: italic;
 }
