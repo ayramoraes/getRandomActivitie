@@ -11,6 +11,8 @@ const activityCategoryParagraph = document.getElementById("activity-category");
 const activityTypeSelect = document.getElementById("activity-type-select");
 const activityTypeBtn = document.getElementById("activity-type-btn");
 const searchForm = document.querySelector('#search-form');
+const spinner = document.getElementById('spinner');
+const activitySpinner = document.getElementById('activity-spinner');
 
 
 function openModal(index) {
@@ -50,9 +52,6 @@ document.addEventListener('keydown', function (e) {
 
 closeModal();
 
-
-
-// Populate the category select element
 const categories = [
   { value: "", label: "--Select a category--" },
   { value: "education", label: "Education" },
@@ -74,8 +73,9 @@ categories.forEach((category) => {
 });
 
 function getRandomActivity() {
+  activityParagraph.style.display = 'none'; // Hide the activity paragraph
+  spinner.classList.remove('hidden'); // Show the spinner
 
-  activityParagraph.textContent = 'Loading...'; 
   fetch(`${url}activity/`)
     .then((response) => response.json())
     .then((data) => {
@@ -88,37 +88,45 @@ function getRandomActivity() {
     })
     .catch((error) => {
       console.error(error);
-      activityParagraph.textContent = 'Error fetching activity...'; // show error message
+      activityParagraph.textContent = 'Error fetching activity...'; 
+    })
+    .finally(() => {
+      activityParagraph.style.display = 'block'; // Show the activity paragraph
+      spinner.classList.add('hidden'); // Hide the spinner
     });
 }
 
 function searchActivityByCategory(event) {
   event.preventDefault();
-  // const category = categorySelect.value;
-  // const type = activityTypeSelect.value;
 
   const formData = new FormData(event.target);
   const category = formData.get('category');
-  const type = formData.get('type') ?? "";
-  
+  const type = formData.get('activity-type');
+
   if (category) {
-    let requestURL = `${url}activity?type=${category}&participants=${type}`
+    activityCategoryParagraph.textContent = ''; 
+    activitySpinner.classList.remove('hidden'); 
+
+    let requestURL = `${url}activity?type=${category}&participants=${type}`;
     fetch(requestURL)
       .then((response) => response.json())
       .then((data) => {
-        if (data.activity) {
+        if (data.error) {
+          activityCategoryParagraph.textContent = data.error;
+        } else if (data.activity) {
           activityCategoryParagraph.textContent = data.activity;
         } else {
-          activityCategoryParagraph.textContent = "No activity available for this category and type.";
+          activityCategoryParagraph.textContent = "An unexpected error was found.";
         }
+
+        activitySpinner.classList.add('hidden'); 
       })
       .catch((error) => {
         console.error(error);
+        activitySpinner.classList.add('hidden'); 
       });
   }
 }
-
-
 
 categorySelect.addEventListener('change', () => {
   if (categorySelect.value !== "") {
@@ -128,9 +136,5 @@ categorySelect.addEventListener('change', () => {
   }
 });
 
-
-
-
 randomActivityBtn.addEventListener("click", getRandomActivity);
-// categoryBtn.addEventListener("click", searchActivityByCategory);
 searchForm.addEventListener('submit', searchActivityByCategory);
