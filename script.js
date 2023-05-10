@@ -12,8 +12,7 @@ const activityTypeSelect = document.getElementById("activity-type-select");
 const activityTypeBtn = document.getElementById("activity-type-btn");
 const searchForm = document.querySelector('#search-form');
 const spinner = document.getElementById('spinner');
-const activitySpinner = document.getElementById('activity-spinner');
-
+const activitySpinner = document.getElementById('activity-spinner')
 
 function openModal(index) {
   modal[index].classList.remove('hidden');
@@ -98,7 +97,7 @@ function getRandomActivity() {
 
 function searchActivityByCategory(event) {
   event.preventDefault();
-
+  
   const formData = new FormData(event.target);
   const category = formData.get('category');
   const type = formData.get('activity-type');
@@ -118,7 +117,6 @@ function searchActivityByCategory(event) {
         } else {
           activityCategoryParagraph.textContent = "An unexpected error was found.";
         }
-
         activitySpinner.classList.add('hidden'); 
       })
       .catch((error) => {

@@ -67,6 +67,7 @@ h1 {
   padding: 1rem; 
   font-style: italic;
 }
+
 .spinner {
   width: 40px;
   height: 40px;
@@ -241,3 +242,4 @@ label {
   color: #333;
   font-style: italic;
 }
+
