@@ -13,8 +13,10 @@
 <body>
   <main>
     <h1>Find things to do when you're bored</h1>
+    <output id="activity-main-output">
     <p id="activity"></p>
     <div id="spinner" class="spinner hidden"></div>    
+  </output>
     <button id="random-activity-btn">Surprise me!</button>
     <button class="show-modal" data-modal="modal1">Let me choose</button>
     <div class="modal hidden" id="modal1">
@@ -28,8 +30,10 @@
           <option value="1">Individual</option>
           <option value="2">Collective</option>
         </select>
+        <output id="activity-modal-output">
         <div id="activity-spinner" class="spinner activity-spinner hidden"></div>
         <p id="activity-category"></p>
+      </output>
         <button type="submit" id="category-btn" disabled>Search the options</button>
       </form>
     </div>
@@ -38,6 +42,5 @@
 
   <script src="script.js"></script>
 </body>
-
 
 </html>
