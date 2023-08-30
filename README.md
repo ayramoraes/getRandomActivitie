@@ -35,16 +35,16 @@ Feeling bored and looking for something exciting to do? The BoredAPI Activity Fi
 
 • You can also press the 'Escape' key to quickly close the modal.
 
-**Technologies Used**
+## **Technologies Used**
 • HTML, CSS, JavaScript: The core languages used to build the frontend of the web application.
 • BoredAPI: The API providing a wide range of activities for users to choose from.
 
 ## **Contributions**
 • Contributions to this project are welcome! If you have suggestions for improvements or new features, feel free to submit a pull request.
 
-**Credits**
+## **Credits**
 This project was inspired by the BoredAPI, which provides the activity data.
 Developed by [Your Name]
 
-**License**
+## **License**
 This project is licensed under the MIT License.
