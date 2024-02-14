@@ -17,7 +17,7 @@ Feeling bored and looking for something exciting to do? The BoredAPI Activity Fi
 ## **How to Use**
 **1. Random Activity:**
 
-• Click the "Surprise me!" button.
+• Click the "Surprise me!" button. 
 • An activity suggestion will appear, ready to chase away your boredom!
 
 **2. Search by Category:**
