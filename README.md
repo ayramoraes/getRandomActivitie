@@ -3,6 +3,8 @@
 ## **Introduction**
 Feeling bored and looking for something exciting to do? The BoredAPI Activity Finder is here to help! This web application provides you with a variety of activities to choose from, whether you're in the mood for a random surprise or you want to search for a specific activity based on your preferences. This README provides an overview of the project's features, code structure, and how to get started using it.
 
+• **GitHub Page**: https://ayramoraes.github.io/getRandomActivity/
+
 ## **Features**
 • **Random Activity Generator:** Click the "Surprise me!" button to get a random activity suggestion. Never be bored again!
 
